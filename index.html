@@ -4,37 +4,24 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>rkyv - rkyv</title>
-        
-        
 
 
         <!-- Custom HTML head -->
         
-
-
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="favicon.svg">
-        
-        
         <link rel="shortcut icon" href="favicon.png">
-        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-        
         <link rel="stylesheet" href="css/print.css" media="print">
-        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        
         <link rel="stylesheet" href="fonts/fonts.css">
-        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -42,19 +29,18 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
 
-        
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -70,7 +56,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -82,12 +68,14 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -95,17 +83,38 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="rkyv.html"><strong aria-hidden="true">1.</strong> rkyv</a></li><li class="chapter-item expanded "><a href="motivation.html"><strong aria-hidden="true">2.</strong> Motivation</a></li><li class="chapter-item expanded "><a href="zero-copy-deserialization.html"><strong aria-hidden="true">3.</strong> Zero-copy deserialization</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">4.</strong> Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="architecture/relative-pointers.html"><strong aria-hidden="true">4.1.</strong> Relative pointers</a></li><li class="chapter-item expanded "><a href="architecture/archive.html"><strong aria-hidden="true">4.2.</strong> Archive</a></li><li class="chapter-item expanded "><a href="architecture/serialize.html"><strong aria-hidden="true">4.3.</strong> Serialize</a></li><li class="chapter-item expanded "><a href="architecture/deserialize.html"><strong aria-hidden="true">4.4.</strong> Deserialize</a></li></ol></li><li class="chapter-item expanded "><a href="format.html"><strong aria-hidden="true">5.</strong> Format</a></li><li class="chapter-item expanded "><a href="unsized-types.html"><strong aria-hidden="true">6.</strong> Unsized Types</a></li><li class="chapter-item expanded "><a href="trait-objects.html"><strong aria-hidden="true">7.</strong> Trait Objects</a></li><li class="chapter-item expanded "><a href="shared-pointers.html"><strong aria-hidden="true">8.</strong> Shared Pointers</a></li><li class="chapter-item expanded "><a href="validation.html"><strong aria-hidden="true">9.</strong> Validation</a></li><li class="chapter-item expanded "><a href="extensions.html"><strong aria-hidden="true">10.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="feature-comparison.html"><strong aria-hidden="true">11.</strong> Feature Comparison</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">12.</strong> FAQ</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rkyv.html" class="active">rkyv</a></li><li class="chapter-item expanded affix "><li class="part-title">Foundations</li><li class="chapter-item expanded "><a href="motivation.html"><strong aria-hidden="true">1.</strong> Motivation</a></li><li class="chapter-item expanded "><a href="zero-copy-deserialization.html"><strong aria-hidden="true">2.</strong> Zero-copy deserialization</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="architecture/relative-pointers.html"><strong aria-hidden="true">3.1.</strong> Relative pointers</a></li><li class="chapter-item expanded "><a href="architecture/archive.html"><strong aria-hidden="true">3.2.</strong> Archive</a></li><li class="chapter-item expanded "><a href="architecture/serialize.html"><strong aria-hidden="true">3.3.</strong> Serialize</a></li><li class="chapter-item expanded "><a href="architecture/deserialize.html"><strong aria-hidden="true">3.4.</strong> Deserialize</a></li><li class="chapter-item expanded "><a href="architecture/alignment.html"><strong aria-hidden="true">3.5.</strong> Alignment</a></li></ol></li><li class="chapter-item expanded "><a href="format.html"><strong aria-hidden="true">4.</strong> Format</a></li><li class="chapter-item expanded "><a href="wrapper-types.html"><strong aria-hidden="true">5.</strong> Wrapper types</a></li><li class="chapter-item expanded "><a href="shared-pointers.html"><strong aria-hidden="true">6.</strong> Shared pointers</a></li><li class="chapter-item expanded "><a href="unsized-types.html"><strong aria-hidden="true">7.</strong> Unsized types</a></li><li class="chapter-item expanded "><a href="trait-objects.html"><strong aria-hidden="true">8.</strong> Trait objects</a></li><li class="chapter-item expanded "><a href="validation.html"><strong aria-hidden="true">9.</strong> Validation</a></li><li class="chapter-item expanded "><a href="feature-comparison.html"><strong aria-hidden="true">10.</strong> Feature comparison</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">11.</strong> FAQ</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced rkyv</li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Serializer composition</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Alternative writers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Extending serialization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> Hybrid deserialization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.</strong> Effective wrapper types</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">18.</strong> Archived vs unarchived types</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">18.1.</strong> Impl duplication</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.</strong> Streaming serialization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">20.</strong> Schema evolution</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">21.</strong> Nightly features</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">21.1.</strong> Copy optimization</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.</strong> Derive macro features</div></li><li class="chapter-item expanded affix "><a href="contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
@@ -114,35 +123,33 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">rkyv</h1>
 
                     <div class="right-buttons">
-                        
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
+                        <a href="https://github.com/rkyv/rkyv/edit/master/book_src/rkyv.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -150,10 +157,9 @@
                         </ul>
                     </div>
                 </div>
-                
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -163,50 +169,49 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#rkyv" id="rkyv">rkyv</a></h1>
-<p><a href="http://github.com/djkoloski/rkyv">rkyv</a> (<em>archive</em>) is a zero-copy deserialization framework for
+                        <p align="center">
+    <img src="https://raw.githubusercontent.com/rkyv/rkyv/master/media/logo_text_color.svg">
+</p>
+<p><a href="http://github.com/rkyv/rkyv">rkyv</a> (<em>archive</em>) is a zero-copy deserialization framework for
 rust.</p>
-<h2><a class="header" href="#crates" id="crates">Crates</a></h2>
-<p>rkyv is composed of three core crates:</p>
+<p>This book covers the motivation, architecture, and major features of rkyv. It is the best way to
+learn and understand rkyv, but won't go as in-depth on specifics as the documentation will. Don't be
+afraid to consult these other resources as you need while you read through.</p>
+<h1 id="resources"><a class="header" href="#resources">Resources</a></h1>
+<h2 id="learning-materials"><a class="header" href="#learning-materials">Learning Materials</a></h2>
 <ul>
-<li><code>rkyv</code>: The base crate, which defines the fundamental traits and provides implementations for core
-types.</li>
-<li><code>rkyv_dyn</code>: Builds on the base crate to add support for serializing and deserializing trait
-objects.</li>
-<li><code>rkyv_typename</code>: Provides naming for types (used with rkyv_dyn).</li>
+<li>The <a href="https://discord.gg/65F6MdnbQh">rkyv discord</a> is a great place to get help with specific
+issues and meet other people using rkyv</li>
+<li>The <a href="https://github.com/rkyv/rkyv">rkyv github</a> hosts the source and tracks project issues
+and milestones.</li>
 </ul>
-<p>The project has three derive crates that are exposed through the core crates:</p>
+<h2 id="documentation"><a class="header" href="#documentation">Documentation</a></h2>
 <ul>
-<li><code>rkyv_derive</code></li>
-<li><code>rkyv_dyn_derive</code></li>
-<li><code>rkyv_typename_derive</code></li>
+<li><a href="https://docs.rs/rkyv">rkyv</a>, the core library</li>
+<li><a href="https://docs.rs/rkyv_dyn">rkyv_dyn</a>, which adds trait object support to rkyv</li>
+<li><a href="https://docs.rs/rkyv_typename">rkyv_typename</a>, a type naming library</li>
 </ul>
-<p>There is a test crate: <code>rkyv_test</code>, and a benchmarking crate: <code>rkyv_bench</code>.</p>
-<h2><a class="header" href="#links" id="links">Links</a></h2>
+<h2 id="benchmarks"><a class="header" href="#benchmarks">Benchmarks</a></h2>
 <ul>
-<li><a href="https://github.com/djkoloski/rkyv">Github repo</a></li>
-<li><a href="https://docs.rs/rkyv">Docs</a></li>
-<li><a href="https://crates.io/crates/rkyv">crates.io</a></li>
+<li>The <a href="https://github.com/djkoloski/rust_serialization_benchmark">rust serialization benchmark</a> is a
+shootout style benchmark comparing many rust serialization solutions. It includes special
+benchmarks for zero-copy serialization solutions like rkyv.</li>
 </ul>
-<h2><a class="header" href="#sister-crates" id="sister-crates">Sister crates</a></h2>
-<p>rkyv has sister crates that are standalone but were designed for use with rkyv:</p>
+<h2 id="sister-crates"><a class="header" href="#sister-crates">Sister Crates</a></h2>
 <ul>
-<li><a href="https://github.com/djkoloski/bytecheck">bytecheck</a>: A type validation framework for Rust.</li>
-<li><a href="https://github.com/djkoloski/ptr_meta">ptr_meta</a>: A radioactive stabilization of the <code>ptr_meta</code>
-RFC.</li>
+<li><a href="https://github.com/rkyv/bytecheck">bytecheck</a>, which rkyv uses for validation</li>
+<li><a href="https://github.com/rkyv/ptr_meta">ptr_meta</a>, which rkyv uses for pointer manipulation</li>
+<li><a href="https://github.com/rkyv/rend">rend</a>, which rkyv uses for endian-agnostic features</li>
 </ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
 
-                        
                             <a rel="next" href="motivation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
 
                         <div style="clear: both"></div>
                     </nav>
@@ -214,45 +219,33 @@ RFC.</li>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
 
-                
                     <a rel="next" href="motivation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
 
-        
 
-        
 
-        
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
-        
 
-        
 
-        
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-        
 
-        
 
+    </div>
     </body>
 </html>

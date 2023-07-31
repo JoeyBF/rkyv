@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Format - rkyv</title>
+        <title>Wrapper types - rkyv</title>
 
 
         <!-- Custom HTML head -->
@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rkyv.html">rkyv</a></li><li class="chapter-item expanded affix "><li class="part-title">Foundations</li><li class="chapter-item expanded "><a href="motivation.html"><strong aria-hidden="true">1.</strong> Motivation</a></li><li class="chapter-item expanded "><a href="zero-copy-deserialization.html"><strong aria-hidden="true">2.</strong> Zero-copy deserialization</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="architecture/relative-pointers.html"><strong aria-hidden="true">3.1.</strong> Relative pointers</a></li><li class="chapter-item expanded "><a href="architecture/archive.html"><strong aria-hidden="true">3.2.</strong> Archive</a></li><li class="chapter-item expanded "><a href="architecture/serialize.html"><strong aria-hidden="true">3.3.</strong> Serialize</a></li><li class="chapter-item expanded "><a href="architecture/deserialize.html"><strong aria-hidden="true">3.4.</strong> Deserialize</a></li><li class="chapter-item expanded "><a href="architecture/alignment.html"><strong aria-hidden="true">3.5.</strong> Alignment</a></li></ol></li><li class="chapter-item expanded "><a href="format.html" class="active"><strong aria-hidden="true">4.</strong> Format</a></li><li class="chapter-item expanded "><a href="wrapper-types.html"><strong aria-hidden="true">5.</strong> Wrapper types</a></li><li class="chapter-item expanded "><a href="shared-pointers.html"><strong aria-hidden="true">6.</strong> Shared pointers</a></li><li class="chapter-item expanded "><a href="unsized-types.html"><strong aria-hidden="true">7.</strong> Unsized types</a></li><li class="chapter-item expanded "><a href="trait-objects.html"><strong aria-hidden="true">8.</strong> Trait objects</a></li><li class="chapter-item expanded "><a href="validation.html"><strong aria-hidden="true">9.</strong> Validation</a></li><li class="chapter-item expanded "><a href="feature-comparison.html"><strong aria-hidden="true">10.</strong> Feature comparison</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">11.</strong> FAQ</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced rkyv</li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Serializer composition</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Alternative writers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Extending serialization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> Hybrid deserialization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.</strong> Effective wrapper types</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">18.</strong> Archived vs unarchived types</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">18.1.</strong> Impl duplication</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.</strong> Streaming serialization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">20.</strong> Schema evolution</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">21.</strong> Nightly features</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">21.1.</strong> Copy optimization</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.</strong> Derive macro features</div></li><li class="chapter-item expanded affix "><a href="contributors.html">Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rkyv.html">rkyv</a></li><li class="chapter-item expanded affix "><li class="part-title">Foundations</li><li class="chapter-item expanded "><a href="motivation.html"><strong aria-hidden="true">1.</strong> Motivation</a></li><li class="chapter-item expanded "><a href="zero-copy-deserialization.html"><strong aria-hidden="true">2.</strong> Zero-copy deserialization</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="architecture/relative-pointers.html"><strong aria-hidden="true">3.1.</strong> Relative pointers</a></li><li class="chapter-item expanded "><a href="architecture/archive.html"><strong aria-hidden="true">3.2.</strong> Archive</a></li><li class="chapter-item expanded "><a href="architecture/serialize.html"><strong aria-hidden="true">3.3.</strong> Serialize</a></li><li class="chapter-item expanded "><a href="architecture/deserialize.html"><strong aria-hidden="true">3.4.</strong> Deserialize</a></li><li class="chapter-item expanded "><a href="architecture/alignment.html"><strong aria-hidden="true">3.5.</strong> Alignment</a></li></ol></li><li class="chapter-item expanded "><a href="format.html"><strong aria-hidden="true">4.</strong> Format</a></li><li class="chapter-item expanded "><a href="wrapper-types.html" class="active"><strong aria-hidden="true">5.</strong> Wrapper types</a></li><li class="chapter-item expanded "><a href="shared-pointers.html"><strong aria-hidden="true">6.</strong> Shared pointers</a></li><li class="chapter-item expanded "><a href="unsized-types.html"><strong aria-hidden="true">7.</strong> Unsized types</a></li><li class="chapter-item expanded "><a href="trait-objects.html"><strong aria-hidden="true">8.</strong> Trait objects</a></li><li class="chapter-item expanded "><a href="validation.html"><strong aria-hidden="true">9.</strong> Validation</a></li><li class="chapter-item expanded "><a href="feature-comparison.html"><strong aria-hidden="true">10.</strong> Feature comparison</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">11.</strong> FAQ</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced rkyv</li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Serializer composition</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Alternative writers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Extending serialization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> Hybrid deserialization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.</strong> Effective wrapper types</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">18.</strong> Archived vs unarchived types</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">18.1.</strong> Impl duplication</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.</strong> Streaming serialization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">20.</strong> Schema evolution</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">21.</strong> Nightly features</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">21.1.</strong> Copy optimization</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.</strong> Derive macro features</div></li><li class="chapter-item expanded affix "><a href="contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -140,7 +140,7 @@
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        <a href="https://github.com/rkyv/rkyv/edit/master/book_src/format.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/rkyv/rkyv/edit/master/book_src/wrapper-types.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -169,73 +169,41 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="format"><a class="header" href="#format">Format</a></h1>
-<p>Types which derive <code>Archive</code> generate an archived version of the type where:</p>
-<ul>
-<li>Member types are replaced with their archived counterparts</li>
-<li>Enums have <code>#[repr(N)]</code> where N is <code>u8</code>, <code>u16</code>, <code>u32</code>, <code>u64</code>, or <code>u128</code>, choosing the smallest
-possible type that can represent all of the variants.</li>
-</ul>
-<p>For example, a struct like:</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>struct Example {
-    a: u32,
-    b: String,
-    c: Box&lt;(u32, String)&gt;,
+                        <h1 id="wrapper-types"><a class="header" href="#wrapper-types">Wrapper types</a></h1>
+<p>Wrapper types make it easy to customize the way that fields of types are archived. They make it
+easier to adapt rkyv to existing data models, and make serializing and deserializing idiomatic for
+even complicated types.</p>
+<p>Annotating a field with <code>#[with(...)]</code> will <em>wrap</em> that field with the given types when the struct
+is serialized or deserialized. There's no performance penalty to actually wrap types, but doing more
+or less work during serialization and deserialization can affect performance. This excerpt is from
+the documentation for <a href="https://docs.rs/rkyv/0.7.1/rkyv/with/trait.ArchiveWith.html"><code>ArchiveWith</code></a>:</p>
+<pre><code class="language-rs">#[derive(Archive, Deserialize, Serialize)]
+struct Example {
+    #[with(Incremented)]
+    a: i32,
+    // Another i32 field, but not incremented this time
+    b: i32,
 }
-<span class="boring">}</span></code></pre></pre>
-<p>Would have the archived counterpart:</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>struct ArchivedExample {
-    a: u32,
-    b: ArchivedString,
-    c: ArchivedBox&lt;(u32, ArchivedString)&gt;,
-}
-<span class="boring">}</span></code></pre></pre>
-<p>With the <code>strict</code> feature, these structs are additionally annotated with <code>#[repr(C)]</code> for guaranteed
-portability and stability.</p>
-<blockquote>
-<p>In most cases, the <code>strict</code> feature will not be necessary and can reduce the space efficiency of
-archived types. Make sure you understand your use case carefully and read the crate documentation
-for details on the <code>strict</code> feature.</p>
-</blockquote>
-<p>rkyv provides <code>Archive</code> implementations for common core and std types by default. In general they
-follow the same format as derived implementations, but may differ in some cases. For example,
-<code>ArchivedString</code> performs a small string optimization which helps reduce memory use.</p>
-<h2 id="object-order"><a class="header" href="#object-order">Object order</a></h2>
-<p>rkyv lays out subobjects in depth-first order from the leaves to the root. This means that the root
-object is stored at the end of the buffer, not the beginning. For example, this tree:</p>
-<pre><code>  a
- / \
-b   c
-   / \
-  d   e
 </code></pre>
-<p>would be laid out like this in the buffer:</p>
-<pre><code>b d e c a
-</code></pre>
-<p>from this serialization order:</p>
-<pre><code>a -&gt; b
-a -&gt; c -&gt; d
-a -&gt; c -&gt; e
-a -&gt; c
-a
-</code></pre>
-<p>This deterministic layout means that you don't need to store the position of the root object in most
-cases. As long as your buffer ends right at the end of your root object, you can use
-<a href="https://docs.rs/rkyv/0.7.1/rkyv/util/fn.archived_root.html"><code>archived_root</code></a> with your buffer.</p>
+<p>The <code>Incremented</code> wrapper is wrapping <code>a</code>, and the definition causes that field to be incremented
+in its archived form. </p>
+<h2 id="with"><a class="header" href="#with"><code>With</code></a></h2>
+<p>The core type behind wrappers is <a href="https://docs.rs/rkyv/0.7.1/rkyv/with/struct.With.html"><code>With</code></a>.
+This struct is <em>transparent</em>, meaning that it's like another name for the type inside of it. rkyv
+uses <code>With</code> to wrap your fields when serializing and deserializing, and when you write your own
+wrappers they will be used with <code>With</code> as well.</p>
+<p>See <a href="https://docs.rs/rkyv/0.7.1/rkyv/with/trait.ArchiveWith.html"><code>ArchiveWith</code></a> for an example of how
+to write your own wrapper types.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="architecture/alignment.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="format.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="wrapper-types.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="shared-pointers.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -245,11 +213,11 @@ cases. As long as your buffer ends right at the end of your root object, you can
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="architecture/alignment.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="format.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="wrapper-types.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="shared-pointers.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

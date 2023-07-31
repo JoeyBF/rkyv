@@ -4,37 +4,24 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Zero-copy deserialization - rkyv</title>
-        
-        
 
 
         <!-- Custom HTML head -->
         
-
-
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="favicon.svg">
-        
-        
         <link rel="shortcut icon" href="favicon.png">
-        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-        
         <link rel="stylesheet" href="css/print.css" media="print">
-        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        
         <link rel="stylesheet" href="fonts/fonts.css">
-        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -42,19 +29,18 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
 
-        
     </head>
     <body>
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -70,7 +56,7 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
@@ -82,12 +68,14 @@
         </script>
 
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
+        <script>
             var html = document.querySelector('html');
-            var sidebar = 'hidden';
+            var sidebar = null;
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
             html.classList.remove('sidebar-visible');
             html.classList.add("sidebar-" + sidebar);
@@ -95,17 +83,38 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="rkyv.html"><strong aria-hidden="true">1.</strong> rkyv</a></li><li class="chapter-item expanded "><a href="motivation.html"><strong aria-hidden="true">2.</strong> Motivation</a></li><li class="chapter-item expanded "><a href="zero-copy-deserialization.html" class="active"><strong aria-hidden="true">3.</strong> Zero-copy deserialization</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">4.</strong> Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="architecture/relative-pointers.html"><strong aria-hidden="true">4.1.</strong> Relative pointers</a></li><li class="chapter-item expanded "><a href="architecture/archive.html"><strong aria-hidden="true">4.2.</strong> Archive</a></li><li class="chapter-item expanded "><a href="architecture/serialize.html"><strong aria-hidden="true">4.3.</strong> Serialize</a></li><li class="chapter-item expanded "><a href="architecture/deserialize.html"><strong aria-hidden="true">4.4.</strong> Deserialize</a></li></ol></li><li class="chapter-item expanded "><a href="format.html"><strong aria-hidden="true">5.</strong> Format</a></li><li class="chapter-item expanded "><a href="unsized-types.html"><strong aria-hidden="true">6.</strong> Unsized Types</a></li><li class="chapter-item expanded "><a href="trait-objects.html"><strong aria-hidden="true">7.</strong> Trait Objects</a></li><li class="chapter-item expanded "><a href="shared-pointers.html"><strong aria-hidden="true">8.</strong> Shared Pointers</a></li><li class="chapter-item expanded "><a href="validation.html"><strong aria-hidden="true">9.</strong> Validation</a></li><li class="chapter-item expanded "><a href="extensions.html"><strong aria-hidden="true">10.</strong> Extensions</a></li><li class="chapter-item expanded "><a href="feature-comparison.html"><strong aria-hidden="true">11.</strong> Feature Comparison</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">12.</strong> FAQ</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="rkyv.html">rkyv</a></li><li class="chapter-item expanded affix "><li class="part-title">Foundations</li><li class="chapter-item expanded "><a href="motivation.html"><strong aria-hidden="true">1.</strong> Motivation</a></li><li class="chapter-item expanded "><a href="zero-copy-deserialization.html" class="active"><strong aria-hidden="true">2.</strong> Zero-copy deserialization</a></li><li class="chapter-item expanded "><a href="architecture.html"><strong aria-hidden="true">3.</strong> Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="architecture/relative-pointers.html"><strong aria-hidden="true">3.1.</strong> Relative pointers</a></li><li class="chapter-item expanded "><a href="architecture/archive.html"><strong aria-hidden="true">3.2.</strong> Archive</a></li><li class="chapter-item expanded "><a href="architecture/serialize.html"><strong aria-hidden="true">3.3.</strong> Serialize</a></li><li class="chapter-item expanded "><a href="architecture/deserialize.html"><strong aria-hidden="true">3.4.</strong> Deserialize</a></li><li class="chapter-item expanded "><a href="architecture/alignment.html"><strong aria-hidden="true">3.5.</strong> Alignment</a></li></ol></li><li class="chapter-item expanded "><a href="format.html"><strong aria-hidden="true">4.</strong> Format</a></li><li class="chapter-item expanded "><a href="wrapper-types.html"><strong aria-hidden="true">5.</strong> Wrapper types</a></li><li class="chapter-item expanded "><a href="shared-pointers.html"><strong aria-hidden="true">6.</strong> Shared pointers</a></li><li class="chapter-item expanded "><a href="unsized-types.html"><strong aria-hidden="true">7.</strong> Unsized types</a></li><li class="chapter-item expanded "><a href="trait-objects.html"><strong aria-hidden="true">8.</strong> Trait objects</a></li><li class="chapter-item expanded "><a href="validation.html"><strong aria-hidden="true">9.</strong> Validation</a></li><li class="chapter-item expanded "><a href="feature-comparison.html"><strong aria-hidden="true">10.</strong> Feature comparison</a></li><li class="chapter-item expanded "><a href="faq.html"><strong aria-hidden="true">11.</strong> FAQ</a></li><li class="chapter-item expanded affix "><li class="part-title">Advanced rkyv</li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Validation</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Serializer composition</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Alternative writers</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Extending serialization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">16.</strong> Hybrid deserialization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">17.</strong> Effective wrapper types</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">18.</strong> Archived vs unarchived types</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">18.1.</strong> Impl duplication</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">19.</strong> Streaming serialization</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">20.</strong> Schema evolution</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">21.</strong> Nightly features</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">21.1.</strong> Copy optimization</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">22.</strong> Derive macro features</div></li><li class="chapter-item expanded affix "><a href="contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
@@ -114,35 +123,33 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
                     <h1 class="menu-title">rkyv</h1>
 
                     <div class="right-buttons">
-                        
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
+                        <a href="https://github.com/rkyv/rkyv/edit/master/book_src/zero-copy-deserialization.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -150,10 +157,9 @@
                         </ul>
                     </div>
                 </div>
-                
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -163,21 +169,84 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#zero-copy-deserialization" id="zero-copy-deserialization">Zero-copy deserialization</a></h1>
-<p>Zero-copy deserialization is a technique that reduces the time and memory required to deserialize
-data by directly referencing bytes in the serialized form.</p>
-<h2><a class="header" href="#partial-zero-copy" id="partial-zero-copy">Partial zero-copy</a></h2>
+                        <h1 id="zero-copy-deserialization"><a class="header" href="#zero-copy-deserialization">Zero-copy deserialization</a></h1>
+<p>Zero-copy deserialization is a technique that reduces the time and memory required to access and use
+data by <em>directly referencing bytes in the serialized form</em>.</p>
+<blockquote>
+<p>This takes advantage of how we have to have some data loaded in memory in order to deserialize it.
+If we had some JSON:</p>
+<pre><code>{ &quot;quote&quot;: &quot;I don't know, I didn't listen.&quot; }
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+</code></pre>
+<p>Instead of copying those characters into a <code>String</code>, we could just <em>borrow</em> it from the JSON
+buffer as a <code>&amp;str</code>. The lifetime of that <code>&amp;str</code> would depend on our buffer and we wouldn't be
+allowed to drop it until we had dropped the string we were using.</p>
+</blockquote>
+<h2 id="partial-zero-copy"><a class="header" href="#partial-zero-copy">Partial zero-copy</a></h2>
 <p>Serde and others have support for partial zero-copy deserialization, where bits and pieces of the
 deserialized data are borrowed from the serialized form. Strings, for example, can borrow their
 bytes directly from the serialized form in encodings like bincode that don't perform any character
 escaping. However, a string object must still be created to hold the deserialized length and point
 to the borrowed characters.</p>
+<blockquote>
+<p>A good way to think about this is that even though we're borrowing lots of data from the buffer,
+we still have to parse the <em>structure</em> out:</p>
+<pre><code class="language-rs">struct Example&lt;'a&gt; {
+  quote: &amp;'a str,
+  a: &amp;'a [u8; 12],
+  b: u64,
+  c: char,
+}
+</code></pre>
+<p>So a buffer might break down like this:</p>
+<pre><code>I don't know, I didn't listen.AAAAAAAAAAAABBBBBBBBCCCC
+^-----------------------------^-----------^-------^---
+ quote: str                    a: [u8; 12] b: u64  c: char
+</code></pre>
+<p>We do a lot less work, but we still have to parse, create, and return an <code>Example&lt;'a&gt;</code>:</p>
+<pre><code class="language-rs">Example {
+  quote: str::from_utf8(&amp;buffer[0..30]).unwrap(),
+  a: &amp;buffer[30..42],
+  b: u64::from_le_bytes(&amp;buffer[42..50]),
+  c: char::from_u32(u32::from_le_bytes(&amp;buffer[50..54]))).unwrap(),
+}
+</code></pre>
+<p>And we can't borrow types like <code>u64</code> or <code>char</code> that have alignment requirements since our buffer
+might not be properly aligned. We have to immediately parse and store those! Even though we
+borrowed 42 of the buffer's bytes, we missed out on the last 12 and still had to parse through the
+buffer to find out where everything is.</p>
+</blockquote>
 <p>Partial zero-copy deserialization can considerably improve memory usage and often speed up
 some deserialiation, but with some work we can go further.</p>
-<h2><a class="header" href="#total-zero-copy" id="total-zero-copy">Total zero-copy</a></h2>
+<h2 id="total-zero-copy"><a class="header" href="#total-zero-copy">Total zero-copy</a></h2>
 <p>rkyv implements total zero-copy deserialization, which guarantees that no data is copied during
 deserialization and no work is done to deserialize data. It achieves this by structuring its encoded
 representation so that it is the same as the in-memory representation of the source type.</p>
+<blockquote>
+<p>This is more like if our buffer <em>was</em> an Example:</p>
+<pre><code class="language-rs">struct Example {
+  quote: String,
+  a: [u8; 12],
+  b: u64,
+  c: char,
+}
+</code></pre>
+<p>And our buffer looked like this:</p>
+<pre><code>I don't know, I didn't listen.__QOFFQLENAAAAAAAAAAAABBBBBBBBCCCC
+^-----------------------------  ^---^---^-----------^-------^---
+ quote bytes                    pointer  a           b       c
+                                and len
+                                ^-------------------------------
+                                 Example
+</code></pre>
+<p>In this case, the bytes are padded to the correct alignment and the fields of <code>Example</code> are laid
+out exactly the same as they would be in memory. Our deserialization code can be much simpler:</p>
+<pre><code class="language-rs">unsafe { &amp;*buffer.as_ptr().add(32).cast() }
+</code></pre>
+<p>This operation is almost zero work, and more importantly it doesn't <em>scale</em> with our data. No
+matter how much or how little data we have, it's always just a pointer offset and a cast to access
+our data.</p>
+</blockquote>
 <p>This opens up blazingly-fast data loading and enables data access orders of magnitude more quickly
 than traditional serialization.</p>
 
@@ -185,17 +254,13 @@ than traditional serialization.</p>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
                             <a rel="prev" href="motivation.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                        
 
-                        
                             <a rel="next" href="architecture.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
-                        
 
                         <div style="clear: both"></div>
                     </nav>
@@ -203,49 +268,36 @@ than traditional serialization.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
                     <a rel="prev" href="motivation.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                
 
-                
                     <a rel="next" href="architecture.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                
             </nav>
 
         </div>
 
-        
 
-        
 
-        
 
-        
-        <script type="text/javascript">
+        <script>
             window.playground_copyable = true;
         </script>
-        
 
-        
 
-        
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-        
 
-        
 
+    </div>
     </body>
 </html>
